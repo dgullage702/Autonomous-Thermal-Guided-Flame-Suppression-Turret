@@ -56,7 +56,7 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
    - Checked the output with a multimeter: 6.04V.
 2. **Pan servo**
    - Wired one servo to the 6V buck output with jumper wires, signal to ESP32 GPIO 18.
-   - The ESP32 GND has to be tied to the buck OUT- so the servo and ESP32 agree on what "0V" is. Without a solid ground the servo just jittered in place.
+   - The ESP32 GND is tied to the buck OUT- so the servo and ESP32 share the same ground.
    - Test sketch moves the servo center, left, center, right using the ESP32Servo library.
 
 ---
