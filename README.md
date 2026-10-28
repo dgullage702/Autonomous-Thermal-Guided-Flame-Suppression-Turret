@@ -73,3 +73,7 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
 - Buck converter set to 6V, multimeter reading 6.04V on the output
   <br><img src="assets/images/01_buck_6v.jpg" width="400">
 <br><br>
+
+- Pan servo wired to the buck converter and ESP32
+  <br><img src="assets/images/02_pan_servo.jpg" width="400">
+<br><br>
