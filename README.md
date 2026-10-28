@@ -41,16 +41,17 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
 ---
 
 ## Wiring
-- **12V supply** -> XL4015 buck converter input
+- **12V supply** -> barrel jack screw terminal adapter -> XL4015 buck converter IN+ / IN-
 - **Buck converter output** -> set to 6.0V (nothing connected yet)
 
 ---
 
 ## Hardware Setup
 1. **Buck converter**
-   - Connected the 12V supply to the XL4015 input.
+   - The servos can't take 12V, so the XL4015 steps the 12V supply down to 6V for them.
+   - Connected the 12V supply to the XL4015 input through a barrel jack screw terminal adapter.
    - With nothing on the output, turned the adjustment screw until the display read 6.0V.
-   - Checked the output with a multimeter.
+   - Checked the output with a multimeter: 6.04V.
 
 ---
 
@@ -63,5 +64,6 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
 ---
 
 ## Photos
-- Buck converter set to 6V
+- Buck converter set to 6V, multimeter reading 6.04V on the output
+  <br><img src="assets/images/01_buck_6v.jpg" width="400">
 <br><br>
