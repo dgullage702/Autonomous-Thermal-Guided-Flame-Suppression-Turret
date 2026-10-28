@@ -42,7 +42,9 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
 
 ## Wiring
 - **12V supply** -> barrel jack screw terminal adapter -> XL4015 buck converter IN+ / IN-
-- **Buck converter output** -> set to 6.0V (nothing connected yet)
+- **Buck converter OUT+ (6V)** -> pan servo red
+- **Buck converter OUT-** -> pan servo brown + ESP32 GND (shared ground)
+- **ESP32 GPIO 18** -> pan servo signal (orange)
 
 ---
 
@@ -52,6 +54,10 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
    - Connected the 12V supply to the XL4015 input through a barrel jack screw terminal adapter.
    - With nothing on the output, turned the adjustment screw until the display read 6.0V.
    - Checked the output with a multimeter: 6.04V.
+2. **Pan servo**
+   - Wired one servo to the 6V buck output with jumper wires, signal to ESP32 GPIO 18.
+   - The ESP32 GND has to be tied to the buck OUT- so the servo and ESP32 agree on what "0V" is. Without a solid ground the servo just jittered in place.
+   - Test sketch moves the servo center, left, center, right using the ESP32Servo library.
 
 ---
 
