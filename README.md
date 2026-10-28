@@ -74,7 +74,7 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
    - Test sketch reads the full 32x24 frame 4 times a second and prints the coldest and hottest temperature. Room reads around 20-25°C, a hand around 30-35°C (`firmware/thermal_test`).
 5. **Finding the hot spot**
    - Searches the frame for the hottest pixel and prints its grid position (`firmware/hotspot_test`).
-   - With the camera's connector facing down, the sensor is turned 90°: the 32 pixel side runs up/down (x goes up as the hot spot moves up) and the 24 pixel side runs left/right (y goes up toward the camera's right). The aiming code uses x for tilt and y for pan.
+   - With the camera's connector facing down, the sensor is turned 90°: the 32 pixel side runs up/down (x goes up as the hot spot moves up) and the 24 pixel side runs left/right (y goes up toward the camera's left). The aiming code uses x for tilt and y for pan.
 
 ---
 
