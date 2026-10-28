@@ -17,8 +17,8 @@ Swiveling, heat-detecting mounted blower for putting out small nearby heat sourc
 A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back and forth looking for heat. A 32x24 thermal camera mounted next to the blower nozzle finds the hottest spot, the turret turns until that spot is centered, and a 12V blower fan puts the flame out. Once the temperature drops it goes back to sweeping.
 
 - **Purpose:** learn ESP32 programming, thermal sensing, and servo control with a build that reacts to real heat.
-- **V1:** prototype on the bench. No soldering and no PCB, everything is connected with jumper wires, servo extensions, and screw terminals. Built for small test flames like a candle.
-- **V2:** compact version with a custom PCB.
+- **V1:** working prototype with no soldering. Power is split with lever wire connectors, signals use jumper wires, and the ESP32, buck converter, and MOSFET module all mount on the printed base. One 12V cord powers everything. Built for small test flames like a candle.
+- **V2:** cleaner, more compact build with a custom PCB.
 
 ---
 
@@ -35,9 +35,10 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
 | HiLetgo XL4015 5A buck converter with voltmeter | Steps 12V down to 6V for the servos |
 | Inline fuse holder + mini blade fuses | Protects the 12V line |
 | 30cm servo extension cables | Servo wiring |
-| Breadboard + jumper wires | Power rails and connections |
-| M2-M5 screw kit | Mounting |
-| Bambu Lab A1 mini + black PLA | Printed mounts |
+| Breadboard + jumper wires | Bench testing and signal connections |
+| Lever wire connectors | Splitting 12V, 6V, and ground without soldering |
+| M2-M5 screw kit + servo horn screws | Mounting |
+| Bambu Lab A1 mini + black PLA | Printed base, pan bracket, and tilt head (`cad/`) |
 
 ---
 
@@ -75,6 +76,12 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
 5. **Finding the hot spot**
    - Searches the frame for the hottest pixel and prints its grid position (`firmware/hotspot_test`).
    - With the camera's connector facing down, the sensor is turned 90°: the 32 pixel side runs up/down (x goes up as the hot spot moves up) and the 24 pixel side runs left/right (y goes up toward the camera's left). The aiming code uses x for tilt and y for pan.
+6. **Printed turret parts**
+   - Three parts printed in PLA on one A1 mini plate (`cad/turret_v1_all_parts.3mf`).
+   - Base: holds the pan servo upright with the shaft over the center, wide footprint so it sits stable on a desk.
+   - Pan bracket: mounts to the pan servo's cross horn and holds the tilt servo on its side.
+   - Tilt head: mounts to the tilt servo's cross horn, holds the blower by its outlet with the thermal camera right above the nozzle so they point the same way.
+   - First prints are light test-fit versions.
 
 ---
 
@@ -82,7 +89,8 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
 - Servos run off the 6V buck output, never off the ESP32.
 - The two servos can pull 2A+ each when starting or stalled, which is why the buck converter is the 5A XL4015.
 - The fan runs straight off 12V through the MOSFET module.
-- The ESP32 is powered over USB for V1.
+- The ESP32 is powered over USB while testing. The finished V1 runs it off the 6V rail through its VIN pin so the 12V supply is the only cord.
+- The inline fuse sits on the 12V line right after the supply.
 
 ---
 
