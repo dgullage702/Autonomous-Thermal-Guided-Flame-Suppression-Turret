@@ -35,6 +35,7 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
 | HiLetgo XL4015 5A buck converter with voltmeter | Steps 12V down to 6V for the servos |
 | Inline fuse holder + mini blade fuses | Protects the 12V line |
 | 30cm servo extension cables | Servo wiring |
+| Breadboard + jumper wires | Power rails and connections |
 | M2-M5 screw kit | Mounting |
 | Bambu Lab A1 mini + black PLA | Printed mounts |
 
@@ -42,9 +43,12 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
 
 ## Wiring
 - **12V supply** -> barrel jack screw terminal adapter -> XL4015 buck converter IN+ / IN-
-- **Buck converter OUT+ (6V)** -> pan servo red
-- **Buck converter OUT-** -> pan servo brown + ESP32 GND (shared ground)
+- **Buck converter OUT+ (6V)** -> breadboard + rail
+- **Buck converter OUT-** -> breadboard - rail
+- **Breadboard + rail** -> pan and tilt servo red
+- **Breadboard - rail** -> pan and tilt servo brown + ESP32 GND (shared ground)
 - **ESP32 GPIO 18** -> pan servo signal (orange)
+- **ESP32 GPIO 19** -> tilt servo signal (orange)
 
 ---
 
@@ -57,7 +61,12 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
 2. **Pan servo**
    - Wired one servo to the 6V buck output with jumper wires, signal to ESP32 GPIO 18.
    - The ESP32 GND is tied to the buck OUT- so the servo and ESP32 share the same ground.
-   - Test sketch moves the servo center, left, center, right using the ESP32Servo library.
+   - Test sketch moves the servo center, left, center, right using the ESP32Servo library (`firmware/pan_servo_test`).
+3. **Tilt servo**
+   - Moved the servo power to a breadboard so each wire gets its own spot instead of stacking them in the buck's screw terminals.
+   - Buck output goes to the breadboard rails, both servos and the ESP32 GND plug into the rails.
+   - Tilt signal goes to ESP32 GPIO 19.
+   - Test sketch moves both servos together, tilt with a smaller range since it will be limited once mounted (`firmware/pan_tilt_test`).
 
 ---
 
@@ -76,4 +85,8 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
 
 - Pan servo wired to the buck converter and ESP32
   <br><img src="assets/images/02_pan_servo.jpg" width="400">
+<br><br>
+
+- Both servos running off the breadboard power rails
+  <br><img src="assets/images/03_pan_tilt_breadboard.jpg" width="400">
 <br><br>
