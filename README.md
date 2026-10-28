@@ -49,6 +49,8 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
 - **Breadboard - rail** -> pan and tilt servo brown + ESP32 GND (shared ground)
 - **ESP32 GPIO 18** -> pan servo signal (orange)
 - **ESP32 GPIO 19** -> tilt servo signal (orange)
+- **ESP32 3V3 / GND** -> MLX90640 VCC / GND
+- **ESP32 GPIO 21 / 22** -> MLX90640 SDA / SCL
 
 ---
 
@@ -67,6 +69,9 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
    - Buck output goes to the breadboard rails, both servos and the ESP32 GND plug into the rails.
    - Tilt signal goes to ESP32 GPIO 19.
    - Test sketch moves both servos together, tilt with a smaller range since it will be limited once mounted (`firmware/pan_tilt_test`).
+4. **Thermal camera**
+   - The MLX90640 talks to the ESP32 over I2C (SDA on GPIO 21, SCL on GPIO 22) and runs off the ESP32's 3.3V.
+   - Test sketch reads the full 32x24 frame 4 times a second and prints the coldest and hottest temperature. Room reads around 20-25°C, a hand around 30-35°C (`firmware/thermal_test`).
 
 ---
 
