@@ -6,8 +6,8 @@
 - `tilt_head.3mf` - mounts to the tilt servo horn, holds the blower by its outlet and the thermal camera right above it
 - `all_parts.3mf` - Bambu Studio project with all three parts on two A1 mini plates (base on one, head and bracket on the other)
 
-## print_v1
+## Draft 1
 First full print, set up as a fast, light test print. The cross shaped horn recess didn't come out on the pan bracket and tilt head, so the horns sit flat and are held by the 4 horn screws.
 
-## print_v2
-Same parts with the horn recess fixed. Next print, made sturdier once everything is tested on print_v1.
+## Draft 2
+Same parts with the horn recess fixed. Next print, made sturdier once everything is tested on draft 1.
