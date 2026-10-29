@@ -77,12 +77,12 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
    - Searches the frame for the hottest pixel and prints its grid position (`firmware/hotspot_test`).
    - With the camera's connector facing down, the sensor is turned 90°: the 32 pixel side runs up/down (x goes up as the hot spot moves up) and the 24 pixel side runs left/right (y goes up toward the camera's left). The aiming code uses x for tilt and y for pan.
 6. **Printed turret parts**
-   - Three parts printed in PLA on two A1 mini plates (`cad/turret_v1_all_parts.3mf`).
+   - Three parts printed in PLA on two A1 mini plates (`cad/print_v1/all_parts.3mf`).
    - Base: holds the pan servo upright with the shaft over the center, wide footprint so it sits stable on a desk. The back half has screw posts for the buck converter, ESP32, and MOSFET module so all the electronics live on the turret. The ESP32 mounts pins-up so jumpers plug in from the top.
    - Pan bracket: mounts to the pan servo's cross horn and holds the tilt servo on its side.
    - Tilt head: mounts to the tilt servo's cross horn, holds the blower by its outlet with the thermal camera right above the nozzle so they point the same way.
    - Printed a small fit test of the servo pocket, fan sleeve, horn mount, and camera tab first, then adjusted the sizes before printing the full parts.
-   - These are still light test-fit versions.
+   - These are still light test-fit versions. Changes for the next print go in `cad/print_v2`.
 
 ---
 
