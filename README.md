@@ -82,7 +82,8 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
    - Pan bracket: mounts to the pan servo's cross horn and holds the tilt servo on its side.
    - Tilt head: mounts to the tilt servo's cross horn, holds the blower by its outlet with the thermal camera right above the nozzle so they point the same way.
    - Printed a small fit test of the servo pocket, fan sleeve, horn mount, and camera tab first, then adjusted the sizes before printing the full parts.
-   - These are still light test-fit versions. Changes for the next print go in `cad/draft_2`.
+   - Draft 1 was a light, fast test print. Putting it together showed what to change: deeper horn pockets, a slide-in pocket for the tilt servo, a stronger fan sleeve, and screw holes for the camera.
+   - Draft 2 has those fixes and fits the whole turret on one plate (`cad/draft_2/all_parts.3mf`).
 
 ---
 
@@ -106,4 +107,16 @@ A stationary pan/tilt turret controlled by an ESP32. When idle it sweeps back an
 
 - Both servos running off the breadboard power rails
   <br><img src="assets/images/03_pan_tilt_breadboard.jpg" width="400">
+<br><br>
+
+- Draft 1 of the printed parts on the A1 mini plate
+  <br><img src="assets/images/04_draft1_print.jpg" width="400">
+<br><br>
+
+- Pan servo sitting in the base pocket
+  <br><img src="assets/images/05_pan_servo_in_base.jpg" width="400">
+<br><br>
+
+- Pan bracket screwed to the pan servo horn
+  <br><img src="assets/images/06_pan_bracket.jpg" width="400">
 <br><br>
