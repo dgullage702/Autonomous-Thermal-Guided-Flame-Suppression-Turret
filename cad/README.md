@@ -10,4 +10,4 @@
 First full print, set up as a fast, light test print. The cross shaped horn recess didn't come out on the pan bracket and tilt head, so the horns sit flat and are held by the 4 horn screws.
 
 ## Draft 2
-Same parts with the horn recess fixed, a bigger and thicker fan sleeve, M2 holes on all board posts, a camera tab with screw holes and nut pockets, and a strap (`servo_strap.3mf`) that screws down over the tilt servo.
+Same parts with the horn recess fixed, pockets for the horn screw heads so the tilt servo and fan sit flush, a full-height pocket with end lips that the tilt servo slides into, a bigger and thicker fan sleeve, M2 holes on all board posts, and a camera tab with screw holes and nut pockets.
